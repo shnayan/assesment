@@ -30,3 +30,4 @@ You will need these files to deploy Eleasticsearch, Kibana, and Spark So, first 
  * `First create index index`
  * `Then we can create visulaization of our data`
  * `I have created using pie chart with disctrictName vs total Crime Count` 
+ ![Kibana Visualization](src/main/resources/image/kibana.png)
