@@ -3,7 +3,7 @@ An analysis of Chicago crime data using Apache Spark. The data can be pulled fro
 
 #### Technologies Used
  - Scala
- - Spark Core APIs
+ - Spark Sql
  - ElasticSearch
  - Kibana
  
@@ -17,6 +17,7 @@ You will need these files to deploy Eleasticsearch, Kibana, and Spark So, first 
   * `git clone https://github.com/shnayan/assesment.git`
   * `sudo chown -R $USER:$USER assessment`
   * `cd assessment`
+## TO push data to Elastic Search from Spark   
   * `./run-script.sh file to push data to elstic index`. It will run following commands:
       * `sbt assembly`
       * `docker-compose up -d` 
@@ -24,3 +25,8 @@ You will need these files to deploy Eleasticsearch, Kibana, and Spark So, first 
       * `docker cp target/scala-2.11/*jar  $container:/home`
       * `docker cp src/main/resources/ $container:/home`
       * `docker exec spark-master-1 /spark/bin/spark-submit  --master local --deploy-mode client  home/assessment-assembly-1.0.jar --verbose --conf "spark.driver.extraJavaOptions=-Dconfig.file=/home/resources/application.conf" --conf "spark.executor.extraJavaOptions=-Dconfig.file=home/resources/application.conf`
+
+## Now we can visulaize the data using Kibana Dashboard.
+ * `First create index index`
+ * `Then we can create visulaization of our data`
+ * `I have created using pie chart with disctrictName vs total Crime Count` 
