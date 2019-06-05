@@ -52,7 +52,7 @@ object assessment {
 
       val finalData = finalDF.toDF(schStr:_*)
 
-      finalData.saveToEs("assessment/crime")
+      finalData.saveToEs("assessment/crimeData")
 
 
   }
