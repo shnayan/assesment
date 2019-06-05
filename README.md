@@ -27,7 +27,6 @@ You will need these files to deploy Eleasticsearch, Kibana, and Spark So, first 
       * `docker exec spark-master-1 /spark/bin/spark-submit  --master local --deploy-mode client  home/assessment-assembly-1.0.jar --verbose --conf "spark.driver.extraJavaOptions=-Dconfig.file=/home/resources/application.conf" --conf "spark.executor.extraJavaOptions=-Dconfig.file=home/resources/application.conf`
 
 ## Now we can visulaize the data using Kibana Dashboard.
- * `First create index index`
- * `Then we can create visulaization of our data`
+ * `we can create visulaization of our data`
  * `I have created using pie chart with disctrictName vs total Crime Count` 
  ![Kibana Visualization](src/main/resources/image/kibana.png)
