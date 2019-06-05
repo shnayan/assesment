@@ -2,8 +2,8 @@
 
 ls -la
 echo "Running sbt assembly"
-#sbt assembly
-#echo "Running docker-compose"
+sbt assembly
+echo "Running docker-compose"
 docker-compose up -d 
 
 container=`docker ps | awk ' /spark-master-1/ {print $1}'`
