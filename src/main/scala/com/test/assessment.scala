@@ -14,6 +14,7 @@ object assessment {
   val master = config.getString("spark.master")
   val esNode = config.getString("spark.elasticNode")
   val esPort = config.getInt("spark.elasticPort")
+  val esIndex = config.getInt("spark.esIndex")
   val outcomeDir = config.getString("directory.outcome")
   val streetDir = config.getString("directory.street")
 
@@ -52,7 +53,7 @@ object assessment {
 
       val finalData = finalDF.toDF(schStr:_*)
 
-      finalData.saveToEs("assessment/crimeData")
+      finalData.saveToEs()
 
 
   }
