@@ -1,7 +1,8 @@
-import org.apache.spark.sql.SparkSession
+package com.test
+
 import com.typesafe.config.ConfigFactory
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.functions.input_file_name
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions.{input_file_name, _}
 import org.elasticsearch.spark.sql._
 /**
   * Created by b0203364 on 6/4/19.
@@ -40,7 +41,6 @@ object assessment {
 
     val street=  streetD.withColumn("cus_val", regexp_extract(input_file_name, "(.*\\d)\\-(.*)(\\-)", 2)).withColumn("districtName",remove_string_udf($"cus_val"))
     val joinedDF = outcome.join(street,Seq("Crime ID"),"full").dropDuplicates()
-        joinedDF.filter($"Crime ID"==="98096d1a69205691a56b89c1182eadd6aaf15400ea18da134e0023f20aba5cdb").show()
     val finalDF = joinedDF.withColumn("lastOutcome",when($"Outcome type".isNotNull,$"Outcome type")
       .otherwise($"Last outcome category"))
       .select("Crime ID","districtName","Latitude","Longitude","Crime type","lastOutcome")

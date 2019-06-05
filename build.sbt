@@ -18,4 +18,10 @@ libraryDependencies ++= Seq(
   "org.elasticsearch" % "elasticsearch-hadoop" % "6.4.1"
 )
 
+mainClass in (Compile, run) := Some("com.test.assessment")
 
+
+assemblyMergeStrategy in assembly := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case x => MergeStrategy.first
+}
