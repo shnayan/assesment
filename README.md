@@ -1,5 +1,5 @@
 # UK reported street crimes dataset analysis
-An analysis of Chicago crime data using Apache Spark. The data can be pulled from the [UK Street Crime Data Link](https://data.police.uk/data/).
+An analysis of UK crime data using Apache Spark. The data can be pulled from the [UK Street Crime Data Link](https://data.police.uk/data/).
 
 #### Technologies Used
  - Scala
