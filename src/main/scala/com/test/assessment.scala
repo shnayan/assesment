@@ -70,9 +70,9 @@ object assessment {
       in otherwise condition
 
       Optimization
-      I have full join which can cause if the DataFrame  is too big.
-      Better way to do  inner join(outcome and street)  on crimeID say d1 :DataFrame
-                         d2 :DataFrame right outer join d1 with original <district>.csv file i.e. street :DataFrame
+      Full join can be avoided here which may lead to the issue if the dataFrame beacame too large
+      Better way to do with => inner join(outcome and street)  on crimeID say d1 :DataFrame
+                          d2 :DataFrame right outer join d1 with original <district>.csv file i.e. street :DataFrame
                          d1.union(d2) for desired result.
  */
 
